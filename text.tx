@@ -1,0 +1,64 @@
+Project
+React Development
+Overview
+For this cumulative assessment on React, you will select and complete one of the following Frontend Mentor  challenges:
+
+IP Address Tracker: Build an application that tracks and displays the location of a given IP address using the IP Geolocation API by IPify  and LeafletJS  for map rendering.
+
+Click here to download the starter files.
+URL Shortening API Landing Page: Create a landing page that integrates with the bitly API  to shorten URLs, featuring a list of shortened links and the ability to copy them to the clipboard.
+
+Click here to download the starter files.
+Important Note: Due to Cross-Origin Resource Sharing (CORS) policies causing errors with the originally suggested CleanURI  API, we have modified this project to use the bitly  API.
+REST Countries API with Color Theme Switcher: Develop an application that fetches data from the REST Countries API , displays country information, and includes a color theme switcher for light and dark modes.
+
+Click here to download the starter files.
+The code, briefs, and images for each challenge are included within this module as well, for reference. You should use the material included with this module, just in case the challenges changes in scope or
+
+This project aims to assess your ability to apply the skills and knowledge acquired throughout the course in a practical, real-world scenario. Choose the challenge that best aligns with your interests and strengths, and demonstrate your proficiency in front-end development. l notes.
+
+Look Famililar?
+If you have completed the HTML, CSS, and JavaScript modules with Per Scholas, you may be familiar with these project starters. As part of this project, you will be required to use React, but the project will be very similar to the projects you completed in the HTML, CSS, and JavaScript modules.
+
+To challenge yourself, try to complete the project without using too much of the code from your previous projects. Or, if you are feeling ambitious, complete one (or both!) of the options you have not yet worked on.
+
+Make sure to carefully review the evaluation rubric for this project, as it differs greatly from the HTML, CSS, and JavaScript project rubric.
+
+Project Requirements
+Usage of React: You must use React for this project.
+Responsive Design: Ensure the application is fully responsive across various devices and screen sizes.
+API Integration: Effectively integrate the specified API to fetch and display data dynamically.
+Interactivity: Implement interactive elements such as search functionality, form validation, and dynamic content updates.
+Accessibility: Follow best practices to make the application accessible to all users.
+Version Control: Use Git for version control, with regular commits and a well-documented GitHub repository.
+Documentation: Include a comprehensive README.md file detailing the project setup, features, and any additiona
+Getting Started
+Start by reviewing each project’s description, brief, and associated images, then choose the challenge that aligns most with your skills and interests.
+
+Once you’ve selected a project:
+
+Download the starter files.
+Initialize a git repository.
+Plan your application structure.
+Begin coding and implementing the project’s features.
+Required Research
+Each of the project options intentionally includes things you may not be familiar with, such as new APIs, new libraries, or new concepts. You will be required to research and learn about these new technologies throughout the project.
+
+While the research requirements will vary depending on the project you select, you will absolutely need to research deployment as it is one of the required submission requirements below.
+
+Deployment is the act of making a web application accessible on a public URL. It is a crucial step in the project process, as it allows you to share and test your work with others. We have included a [Required Reading] section on deployment within this module to get you started. You may review this material at any point during the project timeline.
+
+Submission Requirements
+GitHub Repository:
+
+Host your project on GitHub with all source code and assets.
+Ensure the repository is public and includes a detailed README.md file.
+Live Demo:
+
+Deploy your application using a platform like GitHub Pages, Netlify, or Vercel.
+Provide a link to the live demo in your README.md file.
+Reflection Document:
+
+Write a 200-300 word reflection discussing your development process, challenges faced, solutions implemented, and potential improvements.
+Include this reflection in your GitHub repository.
+Evaluation Criteria
