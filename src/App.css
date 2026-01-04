@@ -4,3 +4,29 @@
   padding: 2rem;
   text-align: center;
 }
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 500px;
+  justify-content: space-around;
+  background-color: antiquewhite;
+}
+body.light {
+  background: #fff;
+  color: #222;
+}
+body.dark {
+  background: #222;
+  color: #fff;
+}
+
+body.light #nav {
+  background: #ffffff;
+  color: #222;
+}
+body.dark #nav {
+  background: #222;
+  color: #fff;
+}
