@@ -33,4 +33,5 @@ export async function fetchOne(countryName:string){
                 console.error('Unknown error:', e);
             }
     }
+    return dataOne
 }
