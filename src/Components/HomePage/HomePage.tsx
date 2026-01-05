@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchALLData } from '../../API/apiFetch';
 import Spinner from '../Spiner/Spinner';
-import Flag from '../FlagCard/FlagCard';
+import Flag from '../FlagCard/FlagCard'
+import FlagHome from '../FlagCard/FlagHome';
 
 export default function HomePage() {
   const [countries, setCountries] = useState<any[]>([])
@@ -30,7 +31,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <Flag countries={countries}/>
+      {countries.map((country, index)=>(
+        <FlagHome key={country.name?.common || index} {...country}/>
+      ))}
       HomePage ({countries.length} countries loaded)
     </div>
   );
