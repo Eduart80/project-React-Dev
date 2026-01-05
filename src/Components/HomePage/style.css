@@ -1,0 +1,28 @@
+#countryPrev{
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+@media (max-width: 1024px) {
+    #countryPrev {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #countryPrev {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    max-width: 1440px;
+    margin: auto;
+    font-size: 14px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+

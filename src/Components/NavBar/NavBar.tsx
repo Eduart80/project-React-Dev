@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 export default function NavBar() {
   return (
     <>
-    <nav>
-        <ul>
+    <nav >
+        <ul style={{backgroundColor:'transparent'}}>
             <li><NavLink 
             style={({ isActive }) => ({ 
                 color: isActive ? 'green' : 'lightgreen' })} 

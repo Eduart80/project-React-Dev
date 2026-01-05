@@ -11,8 +11,8 @@ export default function BackButton() {
     }
   return (
     <>
-      <button className='btn' onClick={handleHome}>Home</button>
-      <button className='btn' onClick={handleBack}>Go Back</button>
+      <button className='btn btn-info' style={{margin:'10px'}} onClick={handleHome}>Home</button>
+      <button className='btn btn-info' style={{margin:'10px'}} onClick={handleBack}>Go Back</button>
     </>
   )
 }

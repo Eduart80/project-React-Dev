@@ -11,7 +11,21 @@ export interface Country {
   nativeName: {official:string}
 }
 
-export interface ComponentProps {
-  countries: Country[];
+export interface CountryDetails{
+  name: {
+    common:string
+    official:string
+    nativeName: {official:string}
+  }
+  flags:{
+    png:string,
+    svg:string,
+    alt:string
+  }
+  currencies: Object
+  capital:string
+  continents:string
+  region:string
+  languages:string
+  borders:[]
 }
-

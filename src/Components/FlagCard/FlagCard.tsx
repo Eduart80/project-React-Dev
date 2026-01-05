@@ -1,7 +1,9 @@
 import React from 'react'
 import type { Country } from '../../types/types'
+import { useParams } from 'react-router-dom'
 
 export default function Flag(props: Country) {
+  const {countryName} = useParams()
   return (
     <>
     <div className="card_image h-100">

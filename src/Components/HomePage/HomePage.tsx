@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { fetchALLData } from '../../API/apiFetch';
-import Spinner from '../Spiner/Spinner';
+import React, { useEffect, useState } from 'react'
+import { fetchALLData } from '../../API/apiFetch'
+import Spinner from '../Spiner/Spinner'
 import Flag from '../FlagCard/FlagCard'
-import FlagHome from '../FlagCard/FlagHome';
+import FlagHome from '../FlagCard/FlagHome'
+import './style.css'
 
 export default function HomePage() {
   const [countries, setCountries] = useState<any[]>([])
@@ -30,7 +31,7 @@ export default function HomePage() {
   if (error) return <div style={{color: 'red', textAlign: 'center'}}>{error}</div>
 
   return (
-    <div>
+    <div id='countryPrev'>
       {countries.map((country, index)=>(
         <FlagHome key={country.name?.common || index} {...country}/>
       ))}
