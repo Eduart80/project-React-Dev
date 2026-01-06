@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { fetchALLData } from '../../API/apiFetch'
 import Spinner from '../Spiner/Spinner'
-import FlagHome from '../FlagHome/FlagHome'
+import FlagDisplay from '../FlagDisplay/FlagDisplay'
 import './style.css'
+import SearchBar from '../SearchBar/SearchBar'
+import SelectByContinents from '../SelectByContinents/SelectByContinents'
 
 export default function HomePage() {
   const [countries, setCountries] = useState<any[]>([])
@@ -30,11 +32,16 @@ export default function HomePage() {
   if (error) return <div style={{color: 'red', textAlign: 'center'}}>{error}</div>
 
   return (
+    <>
+    <div className='subNav'>
+    <SearchBar/><SelectByContinents/>
+    </div>
     <div id='countryPrev'>
       {countries.map((country, index)=>(
-        <FlagHome key={country.name?.common || index} {...country}/>
+        <FlagDisplay key={country.name?.common || index} {...country}/>
       ))}
       HomePage ({countries.length} countries loaded)
     </div>
+    </>
   );
 }

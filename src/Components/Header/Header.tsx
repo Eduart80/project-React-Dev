@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import moonLight from '/images/moonLight.png';
 import moonDark from '/images/moonDark.png';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Header() {
   const [theme, setTheme] = useState(() => {

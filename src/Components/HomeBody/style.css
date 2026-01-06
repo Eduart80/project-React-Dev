@@ -14,6 +14,10 @@
     #countryPrev {
         grid-template-columns: 1fr;
     }
+    .subNav{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 body {
@@ -25,3 +29,8 @@ body {
     font-style: normal;
 }
 
+.subNav{
+    display: flex; 
+    justify-Content: space-between;
+    gap: 1rem;
+}
