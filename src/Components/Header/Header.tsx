@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import moonLight from '/images/moonLight.png';
+import moonDark from '/images/moonDark.png';
 
 export default function Header() {
   const [theme, setTheme] = useState(() => {
-    // Try to get theme from localStorage or default to light
     return localStorage.getItem('theme') || 'light-mode';
   });
 
@@ -22,7 +23,7 @@ export default function Header() {
         <h1>Where in the world?</h1>
         <button id="theme-toggle" aria-label="Toggle dark and light mode" onClick={toggleTheme}>
           <img
-            src={theme === 'dark-mode' ? '../../images/moonLight.png' : '../../images/moonDark.png'}
+            src={theme === 'dark-mode' ? moonLight : moonDark}
             alt={theme === 'dark-mode' ? 'moonLight' : 'moonDark'}
             id="moon"
           />
