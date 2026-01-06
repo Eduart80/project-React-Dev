@@ -8,8 +8,11 @@ import SelectByContinents from '../SelectByContinents/SelectByContinents'
 
 export default function HomePage() {
   const [countries, setCountries] = useState<any[]>([])
+  const [filteredCountries, setFilteredCountries] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedContinent, setSelectedContinent] = useState('')
 
   useEffect(() => {
     setLoading(true)
@@ -20,13 +23,34 @@ export default function HomePage() {
           setError('No country data found.')
         } else {
           setCountries(data);
+          setFilteredCountries(data);
         }
       })
       .catch(() => {
         setError('Failed to fetch country data.')
       })
       .finally(() => setLoading(false))
-  }, []);
+  }, [])
+
+  useEffect(() => {
+    let filtered = countries;
+
+    // Filter continents
+    if (selectedContinent) {
+      filtered = filtered.filter(country => 
+        country.region === selectedContinent
+      )
+    }
+
+    // Filter search
+    if (searchTerm) {
+      filtered = filtered.filter(country =>
+        country.name?.common?.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    }
+
+    setFilteredCountries(filtered)
+  }, [searchTerm, selectedContinent, countries])
 
   if (loading) return <Spinner />
   if (error) return <div style={{color: 'red', textAlign: 'center'}}>{error}</div>
@@ -34,13 +58,14 @@ export default function HomePage() {
   return (
     <>
     <div className='subNav'>
-    <SearchBar/><SelectByContinents/>
+    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+    <SelectByContinents selectedContinent={selectedContinent} setSelectedContinent={setSelectedContinent}/>
     </div>
     <div id='countryPrev'>
-      {countries.map((country, index)=>(
+      {filteredCountries.map((country, index)=>(
         <FlagDisplay key={country.name?.common || index} {...country}/>
       ))}
-      HomePage ({countries.length} countries loaded)
+      {filteredCountries.length === 0 && <p>No countries found</p>}
     </div>
     </>
   );

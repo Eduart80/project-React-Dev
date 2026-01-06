@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import moonLight from '/images/moonLight.png';
-import moonDark from '/images/moonDark.png';
-import SearchBar from '../SearchBar/SearchBar';
+import moonLight from '/images/moonLight.png'
+import moonDark from '/images/moonDark.png'
 
 export default function Header() {
   const [theme, setTheme] = useState(() => {
@@ -10,12 +9,12 @@ export default function Header() {
 
   useEffect(() => {
     document.body.classList.remove('light-mode', 'dark-mode');
-    document.body.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    document.body.classList.add(theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light-mode' ? 'dark-mode' : 'light-mode'));
+    setTheme((prev) => (prev === 'light-mode' ? 'dark-mode' : 'light-mode'))
   };
 
   return (
