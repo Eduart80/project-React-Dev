@@ -12,7 +12,7 @@ function App() {
      <Routes>
       <Route path={'/'} element={<Home />}/>
       <Route path={'/country/:countryName'} element={<FlagCard />}/>
-      <Route path={'/country/neighbour/:countryName'} element={<FlagCard />}/>
+      <Route path={'/country/code/:countryCode'} element={<FlagCard />}/>
       <Route path={'/*'} element={<NoPage />}/>
      </Routes>
     </>

@@ -1,24 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { fetchOne } from '../../API/apiFetch'
+import { fetchOne, fetchByCode } from '../../API/apiFetch'
 import Spinner from '../Spiner/Spinner'
 import BackButton from '../BacButton/BackButton'
 import './flagCard.css'
 
 export default function FlagCard() {
-  const {countryName} = useParams<{countryName:string}>()
+  const {countryName, countryCode} = useParams<{countryName?:string, countryCode?:string}>()
   const [country, setCountry]=useState<any>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(()=>{
+    setLoading(true)
+    setCountry(null)
+    
     if(countryName){
       fetchOne(countryName)
       .then(data => setCountry(data[0]))
       .finally(()=> setLoading(false))
+    } else if(countryCode){
+      fetchByCode(countryCode)
+      .then(data => {
+        let result
+        if(Array.isArray(data)) result = data[0]
+        else result = data
+        setCountry(result)
+      })
+      .finally(()=> setLoading(false))
     }
-  },[countryName])
-
-  console.log("some:: "+country);
+  },[countryName, countryCode])
   
   if (loading) return <Spinner />
   if (!country) return <div>Country not found</div>
@@ -39,7 +49,7 @@ export default function FlagCard() {
       <div className="card-text fs-8 text-body-secondary">
         Borders: {country.borders && country.borders.length > 0 ? (
           country.borders.map((border: string) => (
-            <Link key={border} to={`/country/${border}`}>
+            <Link key={border} to={`/country/code/${border}`}>
               <button className='btn btn-info btn-sm m-1'>{border}</button>
             </Link>
           ))
