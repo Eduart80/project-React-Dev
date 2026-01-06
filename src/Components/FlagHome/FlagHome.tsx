@@ -1,4 +1,3 @@
-import React from 'react'
 import './flags.css'
 
 import type { Country } from '../../types/types'
