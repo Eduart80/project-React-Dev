@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import type { CountryDetails } from '../../types/types'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchOne } from '../../API/apiFetch'
 import Spinner from '../Spiner/Spinner'
 import BackButton from '../BacButton/BackButton'
+import './flagCard.css'
 
 export default function FlagCard() {
   const {countryName} = useParams<{countryName:string}>()
@@ -25,16 +25,32 @@ export default function FlagCard() {
   
   return (
     <>
-    <div className="card_image h-100">
+    <div className="card_image h-100" style={{width:'50%', margin:'auto'}}>
         <img className="card-img-top w-100 rounded-3" src={country.flags.png}  alt={country.name.official}/>
     </div>
-    <div className="card-body">
-    <h5 className="card-title fs-4 fw-semibold">${country.name.common}</h5>
-    <p className="card-text fs-8 text-body-secondary">Capital: {country.capital?.[0]}</p>
-    <p className="card-text fs-8 text-body-secondary">Population: {country.population?.toLocaleString()}</p>
-    <p className="card-text fs-8 text-body-secondary">Region: {country.region}</p>
+      <div className="card-body" style={{marginTop:'10px'}}>
+      <h5 className="card-title fs-4 fw-semibold">{country.name.common}</h5>
+      <p className="card-text fs-8 text-body-secondary">Capital: {country.capital?.[0]}</p>
+      <p className="card-text fs-8 text-body-secondary">Population: {country.population?.toLocaleString()}</p>
+      <p className="card-text fs-8 text-body-secondary">Region: {country.region}</p>
+      <p className="card-text fs-8 text-body-secondary">
+        Languages: {country.languages && Object.values(country.languages).join(', ')}
+      </p>
+      <div className="card-text fs-8 text-body-secondary">
+        Borders: {country.borders && country.borders.length > 0 ? (
+          country.borders.map((border: string) => (
+            <Link key={border} to={`/country/${border}`}>
+              <button className='btn btn-info btn-sm m-1'>{border}</button>
+            </Link>
+          ))
+        ) : (
+          <span>No borders</span>
+        )}
+      </div>
     </div>
+    <hr/>
     <BackButton/>
     </>
   )
 }
+// https://restcountries.com/v3.1/name/italy/?fullText=true

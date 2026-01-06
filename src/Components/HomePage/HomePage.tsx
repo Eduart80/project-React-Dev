@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { fetchALLData } from '../../API/apiFetch'
 import Spinner from '../Spiner/Spinner'
 import Flag from '../FlagCard/FlagCard'
-import FlagHome from '../FlagCard/FlagHome'
+import FlagHome from '../FlagHome/FlagHome'
 import './style.css'
 
 export default function HomePage() {
